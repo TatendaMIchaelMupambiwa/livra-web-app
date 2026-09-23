@@ -12,8 +12,8 @@ function page() {
       </div>
 
       <h1>WELCOME TO LIVRA</h1>
-      <Button className="w-max ">
-        <Link href={"/ogin"}> Get Started </Link>
+      <Button  className="w-max ">
+        <Link href={"/login"}> Get Started </Link>
        
       </Button>
     
