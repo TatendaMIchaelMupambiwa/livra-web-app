@@ -9,6 +9,11 @@ export const registerUser = async ({name, email, password} : Partial<Iuser>) => 
         //step 1: check if user already exists
         const userExistsReponse =  await supabaseConfig.from('user_profiles').select('id').eq('email', email);
 
+console.log('========== SUPABASE QUERY ==========')
+console.log('Response:', userExistsReponse)
+console.log('Data:', userExistsReponse.data)
+console.log('Error:', userExistsReponse.error)
+console.log('====================================')
         if(userExistsReponse.data?.length) {
             throw new Error('user already exists')
 
