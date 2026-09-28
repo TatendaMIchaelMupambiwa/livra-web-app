@@ -4,6 +4,6 @@ export interface  Iuser{
     email:string,
     profile_pic: string,
     password:string,
-    roler: 'user'| 'admin';
+    role: 'user'| 'admin';
     created_at: Date;
 }

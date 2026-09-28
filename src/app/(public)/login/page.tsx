@@ -22,6 +22,7 @@ import { toast } from "react-hot-toast";
 import { set } from "zod/v4";
 import { loginUser } from "@/server-actions/users";
 import cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 function LoginPage() {
   const router = useRouter();
@@ -52,7 +53,9 @@ function LoginPage() {
         throw new Error(response.message);
       }
       cookies.set("token", response.data);
+      Cookies.set("role", values.role);
       router.push(`/${values.role}/dashboard`);
+
       toast.success("Login successful!");
     } catch (error: any) {
       toast.error(

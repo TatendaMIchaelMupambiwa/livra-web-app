@@ -117,9 +117,11 @@ export const getLoggedInUser = async () => {
     throw new Error ("User not found")
   }
 
+  const user = userResponse.data[0];
+  delete user.password;
   return{
     success: true,
-    data: userResponse.data[0],
+    data: user,
     message: 'User fetched successfully'
   }
 

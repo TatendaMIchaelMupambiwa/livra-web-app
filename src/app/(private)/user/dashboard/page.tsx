@@ -4,7 +4,7 @@ import { Iuser } from '@/interfaces';
 import LogoutButton from '@/components/functional/logout-button';
 
 
-async function adminProfile() {
+async function userProfile() {
     const userResponse = await getLoggedInUser();
     if (!userResponse.success){
       return "unauthorised";
@@ -15,7 +15,7 @@ async function adminProfile() {
 
   return (
     <div className="flex flex-col gap-5">
-      <h1> Admin Dashbaord Page</h1>
+      <h1>User Dashbaord Page</h1>
       <h1>Name:{ user.name}</h1>
       <h1>role:{ user.role}</h1>
       <h1>Email: {user.email}</h1>
@@ -24,4 +24,4 @@ async function adminProfile() {
   )
 }
 
-export default adminProfile
+export default userProfile 
