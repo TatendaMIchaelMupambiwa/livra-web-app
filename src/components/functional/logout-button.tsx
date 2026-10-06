@@ -15,10 +15,10 @@ function LogoutButton() {
       router.push("/login");
     } catch (error) {
       toast.error("logout failed");
-    }
+    } 
   };
 
-  return <Button className="w-max" onClick={onClcik}>Logout</Button>;
+  return <Button  onClick={onClcik}>Logout</Button>;
 }
 
 export default LogoutButton;
