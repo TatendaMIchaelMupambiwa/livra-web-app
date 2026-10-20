@@ -50,7 +50,10 @@ export const getAllCategories = async () => {
   }
 };
 
-export const getCategoryById = async (id: string, category: Partial<Icategory>) => {
+export const upadateCategoryById = async (
+  id: string,
+  category: Partial<Icategory>,
+) => {
   try {
     const { data, error } = await supabaseConfig
       .from("categories")
@@ -94,3 +97,4 @@ export const deleteCategoryById = async (id: string) => {
     };
   }
 };
+

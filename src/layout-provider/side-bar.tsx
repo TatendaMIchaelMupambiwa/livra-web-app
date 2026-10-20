@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import LogoutButton from "@/components/functional/logout-button";
+import Link from "next/link";
 
 function SideBar({
   openSidebar,
@@ -93,15 +94,26 @@ function SideBar({
         </SheetHeader>
         <div className="flex flex-col gap-5 px-8 mt-5">
           {menuItems.map((item: any) => (
-            <div key={item.name} className={`px-5 py-3 flex item-center gap-5 hover:bg-muted border-rounded ${pathname === item.path ? "bg-muted border-rounded" : ""}`}>
-              
-                {item.icon}
-               <span className={`text-sm ${pathname === item.path ? "font-bold text-primary" : ""}`}>{item.name}</span> 
-             
-            </div>
-          ))}
+            <Link
+              key={item.name}
+              href={item.path}
+              onClick={() => setOpenSidebar(false)}
+              className={`px-5 py-3 flex items-center gap-5 hover:bg-muted rounded-md ${
+                pathname === item.path ? "bg-muted" : ""
+              }`}
+            >
+              {item.icon}
 
-          <LogoutButton/>
+              <span
+                className={`text-sm ${
+                  pathname === item.path ? "font-bold text-primary" : ""
+                }`}
+              >
+                {item.name}
+              </span>
+            </Link>
+          ))}
+          <LogoutButton />
         </div>
 
         <div className="grid flex-1 auto-rows-min gap-6 px-4" />

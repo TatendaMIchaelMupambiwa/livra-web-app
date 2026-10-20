@@ -145,3 +145,7 @@
     @apply font-sans;
   }
 }
+
+table{
+  border: 1px solid #ccc; 
+}

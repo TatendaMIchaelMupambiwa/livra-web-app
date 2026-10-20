@@ -42,7 +42,8 @@ function PrivateLayout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <PrivateLayoutHeader />
-      {children}
+      <div className="p-5">{children}</div>
+      
     </div>
   );
 }
